@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15B0CA152F7710980D4F15C9 /* Pods_Cookery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B80BE7893B5671D5AF13259 /* Pods_Cookery.framework */; };
 		B01312D31D06E7AA00D2E90F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B01312D21D06E7AA00D2E90F /* main.m */; };
 		B01312D61D06E7AA00D2E90F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B01312D51D06E7AA00D2E90F /* AppDelegate.m */; };
 		B01312D91D06E7AA00D2E90F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01312D81D06E7AA00D2E90F /* ViewController.m */; };
 		B01312DC1D06E7AA00D2E90F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01312DA1D06E7AA00D2E90F /* Main.storyboard */; };
 		B01312DE1D06E7AA00D2E90F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01312DD1D06E7AA00D2E90F /* Assets.xcassets */; };
 		B01312E11D06E7AA00D2E90F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01312DF1D06E7AA00D2E90F /* LaunchScreen.storyboard */; };
+		B09BE0A51D06FDD3005C5475 /* SideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BE0A41D06FDD3005C5475 /* SideBarTableViewController.m */; };
+		B09BE0A81D06FFD5005C5475 /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BE0A71D06FFD5005C5475 /* CatalogViewController.m */; };
+		B09BE0AB1D06FFF1005C5475 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BE0AA1D06FFF1005C5475 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CA9098D2E94D3ADB8FDF173 /* Pods-Cookery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cookery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cookery/Pods-Cookery.debug.xcconfig"; sourceTree = "<group>"; };
+		8B80BE7893B5671D5AF13259 /* Pods_Cookery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cookery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01312CE1D06E7AA00D2E90F /* Cookery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01312D21D06E7AA00D2E90F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B01312D41D06E7AA00D2E90F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +32,13 @@
 		B01312DD1D06E7AA00D2E90F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B01312E01D06E7AA00D2E90F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B01312E21D06E7AA00D2E90F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B09BE0A31D06FDD3005C5475 /* SideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarTableViewController.h; sourceTree = "<group>"; };
+		B09BE0A41D06FDD3005C5475 /* SideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarTableViewController.m; sourceTree = "<group>"; };
+		B09BE0A61D06FFD5005C5475 /* CatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogViewController.h; sourceTree = "<group>"; };
+		B09BE0A71D06FFD5005C5475 /* CatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogViewController.m; sourceTree = "<group>"; };
+		B09BE0A91D06FFF1005C5475 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B09BE0AA1D06FFF1005C5475 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		D63AFB4A5A873C00D9683DC3 /* Pods-Cookery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cookery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cookery/Pods-Cookery.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +46,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B0CA152F7710980D4F15C9 /* Pods_Cookery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5776BACDAA56B725937CA798 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CA9098D2E94D3ADB8FDF173 /* Pods-Cookery.debug.xcconfig */,
+				D63AFB4A5A873C00D9683DC3 /* Pods-Cookery.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B01312C51D06E7AA00D2E90F = {
 			isa = PBXGroup;
 			children = (
 				B01312D01D06E7AA00D2E90F /* Cookery */,
 				B01312CF1D06E7AA00D2E90F /* Products */,
+				5776BACDAA56B725937CA798 /* Pods */,
+				BE284FF3DB45EA1D604A40C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +83,9 @@
 		B01312D01D06E7AA00D2E90F /* Cookery */ = {
 			isa = PBXGroup;
 			children = (
-				B01312D41D06E7AA00D2E90F /* AppDelegate.h */,
-				B01312D51D06E7AA00D2E90F /* AppDelegate.m */,
+				B01312EA1D06E7CC00D2E90F /* Controller */,
+				B01312E91D06E7C500D2E90F /* View */,
+				B01312E81D06E7BB00D2E90F /* Model */,
 				B01312D71D06E7AA00D2E90F /* ViewController.h */,
 				B01312D81D06E7AA00D2E90F /* ViewController.m */,
 				B01312DA1D06E7AA00D2E90F /* Main.storyboard */,
@@ -74,9 +100,46 @@
 		B01312D11D06E7AA00D2E90F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B01312D41D06E7AA00D2E90F /* AppDelegate.h */,
+				B01312D51D06E7AA00D2E90F /* AppDelegate.m */,
 				B01312D21D06E7AA00D2E90F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B01312E81D06E7BB00D2E90F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B01312E91D06E7C500D2E90F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B01312EA1D06E7CC00D2E90F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B09BE0A31D06FDD3005C5475 /* SideBarTableViewController.h */,
+				B09BE0A41D06FDD3005C5475 /* SideBarTableViewController.m */,
+				B09BE0A61D06FFD5005C5475 /* CatalogViewController.h */,
+				B09BE0A71D06FFD5005C5475 /* CatalogViewController.m */,
+				B09BE0A91D06FFF1005C5475 /* MapViewController.h */,
+				B09BE0AA1D06FFF1005C5475 /* MapViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BE284FF3DB45EA1D604A40C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B80BE7893B5671D5AF13259 /* Pods_Cookery.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B01312E51D06E7AA00D2E90F /* Build configuration list for PBXNativeTarget "Cookery" */;
 			buildPhases = (
+				C3684502DB10D101F7B3E6E8 /* [CP] Check Pods Manifest.lock */,
 				B01312CA1D06E7AA00D2E90F /* Sources */,
 				B01312CB1D06E7AA00D2E90F /* Frameworks */,
 				B01312CC1D06E7AA00D2E90F /* Resources */,
+				019965684F059940B896053C /* [CP] Embed Pods Frameworks */,
+				0DEFDA8E930DC3F6C680CB25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,12 +211,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		019965684F059940B896053C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cookery/Pods-Cookery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DEFDA8E930DC3F6C680CB25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cookery/Pods-Cookery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3684502DB10D101F7B3E6E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B01312CA1D06E7AA00D2E90F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09BE0A51D06FDD3005C5475 /* SideBarTableViewController.m in Sources */,
+				B09BE0A81D06FFD5005C5475 /* CatalogViewController.m in Sources */,
 				B01312D91D06E7AA00D2E90F /* ViewController.m in Sources */,
+				B09BE0AB1D06FFF1005C5475 /* MapViewController.m in Sources */,
 				B01312D61D06E7AA00D2E90F /* AppDelegate.m in Sources */,
 				B01312D31D06E7AA00D2E90F /* main.m in Sources */,
 			);
@@ -262,6 +379,7 @@
 		};
 		B01312E61D06E7AA00D2E90F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CA9098D2E94D3ADB8FDF173 /* Pods-Cookery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cookery/Info.plist;
@@ -273,6 +391,7 @@
 		};
 		B01312E71D06E7AA00D2E90F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D63AFB4A5A873C00D9683DC3 /* Pods-Cookery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cookery/Info.plist;
@@ -301,6 +420,7 @@
 				B01312E71D06E7AA00D2E90F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
