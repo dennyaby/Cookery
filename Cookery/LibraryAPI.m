@@ -44,7 +44,6 @@
 }
 
 - (void) parserFinishedParsingDataWithResult: (NSMutableDictionary *) data {
-    NSLog(@"%@", data);
     [[NSNotificationCenter defaultCenter] postNotificationName: @"DataDownloaded" object: self];
 }
 
@@ -56,15 +55,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver: self];
 }
 
-- (void) parserFinishedDocument: (NSNotification *) notification {
-    NSLog(@"%@", notification.userInfo);
-    //[database setData: notification.userInfo];
-    NSMutableArray *arr = notification.userInfo[@"categories"];
-    for (int i = 0; i < arr.count; i++) {
-        NSLog(@"ID = %@, NAME = %@", arr[i][@"id"], arr[i][@"name"]);
-    }
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"dataDownloaded" object: self];
-}
 
 - (void) downloadDataFromUrl: (NSURL *) url withCompletionHandler: (void(^)(NSData *data)) completionHandler {
     [httpClient downloadDataFromUrl: url withCompletionHandler: completionHandler];

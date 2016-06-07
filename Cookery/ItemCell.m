@@ -23,27 +23,28 @@
 
 - (void) setNameValue:(NSString *)nameValue {
     _nameValue = nameValue;
-    self.nameCell.text = nameValue;
+    _nameCell.text = nameValue;
 }
 
 - (void) setWeightValue:(NSString *)weightValue {
     _weightValue = weightValue;
-    self.weightCell.text = weightValue;
+    _weightCell.text = weightValue;
 }
 
 - (void) setPriceValue:(NSString *)priceValue {
     _priceValue = priceValue;
-    self.priceCell.text = priceValue;
+    _priceCell.text = priceValue;
 }
 
 - (void) setImageValue:(UIImage *)imageValue {
     _imageValue = imageValue;
-    self.imageCell.image = imageValue;
+    _imageCell.image = imageValue;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.imageValue = [UIImage imageNamed: @"placeholder"];
+    self.nameCell.numberOfLines = 3;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

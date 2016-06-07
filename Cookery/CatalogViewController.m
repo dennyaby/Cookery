@@ -11,10 +11,13 @@
 #import "AppDelegate.h"
 #import "LibraryAPI.h"
 #import "CategoryCell.h"
+#import "CategoryViewController.h"
 
 static NSString *urlString = @"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN";
 
 @interface CatalogViewController ()
+
+@property (strong, nonatomic) NSArray *categoryPictureNames;
 
 @end
 
@@ -29,6 +32,11 @@ static NSString *urlString = @"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN";
         [self.navigationItem.leftBarButtonItem setAction: @selector(revealToggle:)];
         [self.view addGestureRecognizer: self.revealViewController.panGestureRecognizer];
     }
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Data" ofType: @"plist"];
+    self.categoryPictureNames = [[NSDictionary dictionaryWithContentsOfFile: path] objectForKey: @"CategoryPictureNames"];
+    
+    
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataDownloaded:) name: @"DataDownloaded" object:nil];
     [self downloadCookeryData];
 }
@@ -62,7 +70,6 @@ static NSString *urlString = @"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSArray *arr = [[LibraryAPI sharedInstance] getData][@"categories"];
-    NSLog(@"Arr count: %d", arr.count);
     return arr.count;
 }
 
@@ -70,11 +77,40 @@ static NSString *urlString = @"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CategoryCell *cell = [tableView dequeueReusableCellWithIdentifier: @"categoryCell" forIndexPath:indexPath];
     NSArray *arr = [[LibraryAPI sharedInstance] getData][@"categories"];
+    for (NSDictionary *dict in self.categoryPictureNames) {
+        if ([dict[@"Id"] intValue] == [arr[indexPath.row][@"id"] intValue]) {
+            cell.image = [UIImage imageNamed: [dict objectForKey: @"Name"]];
+            break;
+        }
+    }
     cell.descriptionString = arr[indexPath.row][@"name"];
     
     return cell;
 }
 
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSArray *arr = [[LibraryAPI sharedInstance] getData][@"categories"];
+    return arr.count > 0 ? @"Категории" : @"";
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"showCategory"]) {
+        CategoryViewController *categoryVC = segue.destinationViewController;
+        
+        long selectedRow = [self.tableView indexPathForSelectedRow].row;
+        NSArray *categoryArr = [[LibraryAPI sharedInstance] getData][@"categories"];
+        int categoryId = [categoryArr[selectedRow][@"id"] intValue];
+        
+        NSMutableArray *items = [NSMutableArray array];
+        NSArray *offersArray = [[LibraryAPI sharedInstance] getData][@"offers"];
+        for (NSDictionary *dict in offersArray) {
+            if ([dict[@"categoryId"] intValue] == categoryId) {
+                [items addObject: dict];
+            }
+        }
+        categoryVC.items = items;
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
