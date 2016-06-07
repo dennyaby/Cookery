@@ -8,6 +8,11 @@
 
 #import "CatalogViewController.h"
 #import "SWRevealViewController.h"
+#import "AppDelegate.h"
+#import "LibraryAPI.h"
+#import "CategoryCell.h"
+
+static NSString *urlString = @"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN";
 
 @interface CatalogViewController ()
 
@@ -24,34 +29,52 @@
         [self.navigationItem.leftBarButtonItem setAction: @selector(revealToggle:)];
         [self.view addGestureRecognizer: self.revealViewController.panGestureRecognizer];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataDownloaded:) name: @"DataDownloaded" object:nil];
+    [self downloadCookeryData];
+}
+- (void) dataDownloaded: (NSNotification *) notification {
+    NSLog(@"Downloaded");
+    [self.tableView reloadData];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) downloadCookeryData {
+    NSURL *url = [NSURL URLWithString: urlString];
+    [[LibraryAPI sharedInstance] downloadDataFromUrl: url withCompletionHandler: ^(NSData *data) {
+        if (data != nil) {
+            [[LibraryAPI sharedInstance] parseData: data];
+        }
+    }];
+    
 }
+
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+}
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    NSArray *arr = [[LibraryAPI sharedInstance] getData][@"categories"];
+    NSLog(@"Arr count: %d", arr.count);
+    return arr.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    CategoryCell *cell = [tableView dequeueReusableCellWithIdentifier: @"categoryCell" forIndexPath:indexPath];
+    NSArray *arr = [[LibraryAPI sharedInstance] getData][@"categories"];
+    cell.descriptionString = arr[indexPath.row][@"name"];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
