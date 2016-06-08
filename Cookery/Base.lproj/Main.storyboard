@@ -105,17 +105,17 @@
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCl-fU-8dk">
-                                            <rect key="frame" x="8" y="0.5" width="109" height="110.5"/>
+                                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCl-fU-8dk">
+                                            <rect key="frame" x="8" y="4" width="105" height="105"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageCell" destination="TCl-fU-8dk" id="wtv-NH-hm3"/>
+                                    <outlet property="cellImage" destination="TCl-fU-8dk" id="hLg-CN-HCb"/>
                                     <outlet property="nameCell" destination="Q8v-B4-pF0" id="Ww2-cK-o57"/>
                                     <outlet property="priceCell" destination="gG7-JV-PVg" id="spo-cR-oq6"/>
                                     <outlet property="weightCell" destination="xDf-cN-nLI" id="PHI-Fs-wTt"/>
-                                    <segue destination="XKY-cK-OdE" kind="show" identifier="showItemSegue" id="naE-Vy-4Bk"/>
+                                    <segue destination="XKY-cK-OdE" kind="show" identifier="showItem" id="naE-Vy-4Bk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -224,11 +224,11 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="itemDescription" destination="frx-Mb-fqO" id="vuh-m0-VAx"/>
-                        <outlet property="itemImage" destination="mRS-rY-BsE" id="A5o-I5-c02"/>
-                        <outlet property="itemName" destination="EsC-zw-Ngl" id="Rtu-sI-8pc"/>
-                        <outlet property="itemPrice" destination="evh-9b-2at" id="05J-e1-mTb"/>
-                        <outlet property="itemWeight" destination="GVd-jL-mTP" id="Vdp-h5-D7E"/>
+                        <outlet property="itemDescriptionView" destination="frx-Mb-fqO" id="FiN-YD-l3s"/>
+                        <outlet property="itemImageView" destination="mRS-rY-BsE" id="dNv-mv-WX1"/>
+                        <outlet property="itemNameLabel" destination="EsC-zw-Ngl" id="y7W-eH-drD"/>
+                        <outlet property="itemPriceLabel" destination="evh-9b-2at" id="teD-fa-mMF"/>
+                        <outlet property="itemWeightLabel" destination="GVd-jL-mTP" id="sXj-3O-yFJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6M-q3-eGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -275,7 +275,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cookery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmp-0r-93w">
-                                            <rect key="frame" x="17" y="11" width="249" height="21"/>
+                                            <rect key="frame" x="17" y="11" width="249" height="32.5"/>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="26"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>

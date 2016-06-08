@@ -47,7 +47,6 @@
         annotation.coordinate = CLLocationCoordinate2DMake([dict[@"longtitude"] doubleValue], [dict[@"latitude"] doubleValue]);
         annotation.title = dict[@"title"];
         annotation.subtitle = dict[@"subtitle"];
-        NSLog(@"Added annotation");
         [self.mapView addAnnotation: annotation];
     }
     self.mapView.showsUserLocation = YES;

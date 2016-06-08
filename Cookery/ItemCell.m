@@ -10,7 +10,7 @@
 
 @interface ItemCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageCell;
+@property (weak, nonatomic) IBOutlet UIImageView *cellImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameCell;
 @property (weak, nonatomic) IBOutlet UILabel *weightCell;
 
@@ -36,15 +36,15 @@
     _priceCell.text = priceValue;
 }
 
-- (void) setImageValue:(UIImage *)imageValue {
-    _imageValue = imageValue;
-    _imageCell.image = imageValue;
+- (void) setImage:(UIImage *)image {
+    if (_image != image) {
+        _image = image;
+        _cellImage.image = image;
+    }
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.imageValue = [UIImage imageNamed: @"placeholder"];
-    self.nameCell.numberOfLines = 3;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

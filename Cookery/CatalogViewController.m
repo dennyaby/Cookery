@@ -41,7 +41,6 @@ static NSString *urlString = @"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN";
     [self downloadCookeryData];
 }
 - (void) dataDownloaded: (NSNotification *) notification {
-    NSLog(@"Downloaded");
     [self.tableView reloadData];
     
 }

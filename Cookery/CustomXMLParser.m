@@ -40,7 +40,6 @@
 }
 
 - (void) parserDidStartDocument:(NSXMLParser *)parser {
-    NSLog(@"Start");
     self.dictTempDataStorage = [NSMutableDictionary dictionary];
     self.dictData = [NSMutableDictionary dictionary];
     self.currentElement = [NSString string];
@@ -51,7 +50,6 @@
 }
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser {
-    NSLog(@"End");
     self.retreivedData = self.dictData;
     [self.feedback parserFinishedParsingDataWithResult: self.dictData];
     //[[NSNotificationCenter defaultCenter] postNotificationName: @"parserEndDocument" object: self userInfo: [NSDictionary dictionaryWithDictionary: dictData]];

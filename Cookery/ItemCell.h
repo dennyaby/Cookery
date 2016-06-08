@@ -13,6 +13,6 @@
 @property (strong, nonatomic) NSString *nameValue;
 @property (strong, nonatomic) NSString *weightValue;
 @property (strong, nonatomic) NSString *priceValue;
-@property (strong, nonatomic) UIImage *imageValue;
+@property (strong, nonatomic) UIImage *image;
 
 @end

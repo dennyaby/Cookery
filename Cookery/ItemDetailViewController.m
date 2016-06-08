@@ -10,11 +10,11 @@
 
 @interface ItemDetailViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *itemImage;
-@property (weak, nonatomic) IBOutlet UILabel *itemName;
-@property (weak, nonatomic) IBOutlet UILabel *itemWeight;
-@property (weak, nonatomic) IBOutlet UILabel *itemPrice;
-@property (weak, nonatomic) IBOutlet UITextView *itemDescription;
+@property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
+@property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *itemWeightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *itemPriceLabel;
+@property (weak, nonatomic) IBOutlet UITextView *itemDescriptionView;
 
 @end
 
@@ -22,7 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.itemImageView.image = self.itemImage;
+    self.itemNameLabel.text = self.itemName;
+    self.itemWeightLabel.text = [NSString stringWithFormat: @"Вес: %@", self.itemWeight];
+    self.itemPriceLabel.text = [NSString stringWithFormat: @"Цена: %@", self.itemPrice];
+    self.itemDescriptionView.text = self.itemDescription;
 }
 
 - (void)didReceiveMemoryWarning {
