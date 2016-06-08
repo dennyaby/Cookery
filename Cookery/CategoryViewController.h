@@ -11,5 +11,6 @@
 @interface CategoryViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *items;
+@property (strong, nonatomic) NSString *categoryName;
 
 @end

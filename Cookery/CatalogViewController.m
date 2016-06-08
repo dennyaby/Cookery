@@ -25,6 +25,9 @@ static NSString *urlString = @"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor blackColor]}];
+    self.navigationItem.title = @"Catalog";
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if (revealViewController) {
@@ -89,7 +92,8 @@ static NSString *urlString = @"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN";
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSArray *arr = [[LibraryAPI sharedInstance] getData][@"categories"];
-    return arr.count > 0 ? @"Категории" : @"";
+    //return arr.count > 0 ? @"Категории" : @"";
+    return nil;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -108,6 +112,7 @@ static NSString *urlString = @"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN";
             }
         }
         categoryVC.items = items;
+        categoryVC.categoryName = categoryArr[selectedRow][@"name"];
     }
 }
 

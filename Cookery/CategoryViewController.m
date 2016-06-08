@@ -33,6 +33,10 @@
             }
         }];
     }
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary    dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,  [UIFont fontWithName:@"FontNAme" size:20], NSFontAttributeName, nil]];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    self.navigationItem.title = self.categoryName;
 }
 
 - (void) imageDownloaded: (NSNotification *) notification {
