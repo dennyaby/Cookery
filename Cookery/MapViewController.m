@@ -8,8 +8,12 @@
 
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
+#import <MapKit/MapKit.h>
 
 @interface MapViewController ()
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -17,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self configureMap];
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if (revealViewController) {
@@ -26,19 +32,31 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) configureMap {
+    self.mapView.mapType = MKMapTypeHybrid;
+    CLLocationCoordinate2D loc = CLLocationCoordinate2DMake(53.9045404, 27.5616074);
+    
+    
+    MKCoordinateRegion reg = MKCoordinateRegionMakeWithDistance(loc, 20000, 20000);
+    self.mapView.region = reg;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Data" ofType: @"plist"];
+    NSArray *annotations = [[NSDictionary dictionaryWithContentsOfFile: path] objectForKey: @"Annotations"];
+    for (NSDictionary *dict in annotations) {
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        annotation.coordinate = CLLocationCoordinate2DMake([dict[@"longtitude"] doubleValue], [dict[@"latitude"] doubleValue]);
+        annotation.title = dict[@"title"];
+        annotation.subtitle = dict[@"subtitle"];
+        NSLog(@"Added annotation");
+        [self.mapView addAnnotation: annotation];
+    }
+    self.mapView.showsUserLocation = YES;
+    
+    self.locationManager = [CLLocationManager new];
+    
+    [self.locationManager requestWhenInUseAuthorization];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

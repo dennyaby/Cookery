@@ -14,6 +14,8 @@
 		B01312DC1D06E7AA00D2E90F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01312DA1D06E7AA00D2E90F /* Main.storyboard */; };
 		B01312DE1D06E7AA00D2E90F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01312DD1D06E7AA00D2E90F /* Assets.xcassets */; };
 		B01312E11D06E7AA00D2E90F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01312DF1D06E7AA00D2E90F /* LaunchScreen.storyboard */; };
+		B07125CA1D077A64004B8837 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07125C91D077A64004B8837 /* MapKit.framework */; };
+		B07125CC1D084938004B8837 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07125CB1D084938004B8837 /* CoreLocation.framework */; };
 		B09BE0A51D06FDD3005C5475 /* SideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BE0A41D06FDD3005C5475 /* SideBarTableViewController.m */; };
 		B09BE0A81D06FFD5005C5475 /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BE0A71D06FFD5005C5475 /* CatalogViewController.m */; };
 		B09BE0AB1D06FFF1005C5475 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BE0AA1D06FFF1005C5475 /* MapViewController.m */; };
@@ -41,6 +43,8 @@
 		B01312DD1D06E7AA00D2E90F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B01312E01D06E7AA00D2E90F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B01312E21D06E7AA00D2E90F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B07125C91D077A64004B8837 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B07125CB1D084938004B8837 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B09BE0A31D06FDD3005C5475 /* SideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarTableViewController.h; sourceTree = "<group>"; };
 		B09BE0A41D06FDD3005C5475 /* SideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarTableViewController.m; sourceTree = "<group>"; };
 		B09BE0A61D06FFD5005C5475 /* CatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogViewController.h; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07125CC1D084938004B8837 /* CoreLocation.framework in Frameworks */,
+				B07125CA1D077A64004B8837 /* MapKit.framework in Frameworks */,
 				15B0CA152F7710980D4F15C9 /* Pods_Cookery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +194,8 @@
 		BE284FF3DB45EA1D604A40C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B07125CB1D084938004B8837 /* CoreLocation.framework */,
+				B07125C91D077A64004B8837 /* MapKit.framework */,
 				8B80BE7893B5671D5AF13259 /* Pods_Cookery.framework */,
 			);
 			name = Frameworks;

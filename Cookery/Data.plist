@@ -89,5 +89,58 @@
 			<string>barbecue</string>
 		</dict>
 	</array>
+	<key>Annotations</key>
+	<array>
+		<dict>
+			<key>longtitude</key>
+			<string>53.8903501</string>
+			<key>latitude</key>
+			<string>27.5517677</string>
+			<key>title</key>
+			<string>McDonalds </string>
+			<key>subtitle</key>
+			<string>ул. Бобруйская, 6</string>
+		</dict>
+		<dict>
+			<key>longtitude</key>
+			<string>53.8934163</string>
+			<key>latitude</key>
+			<string>27.5643444</string>
+			<key>title</key>
+			<string>Родны кут</string>
+			<key>subtitle</key>
+			<string>ул. Октябрьская, 5</string>
+		</dict>
+		<dict>
+			<key>longtitude</key>
+			<string>53.9256568</string>
+			<key>latitude</key>
+			<string>27.5926897</string>
+			<key>title</key>
+			<string>Пицца Темпо</string>
+			<key>subtitle</key>
+			<string>ул. Якуба Коласа, 37 </string>
+		</dict>
+		<dict>
+			<key>longtitude</key>
+			<string>53.9062279</string>
+			<key>latitude</key>
+			<string>27.4333284</string>
+			<key>title</key>
+			<string>Burger King</string>
+			<key>subtitle</key>
+			<string>ул. Притыцкого, 154</string>
+		</dict>
+		<dict>
+			<key>longtitude</key>
+			<string>53.9044614</string>
+			<key>latitude</key>
+			<string>27.5516102</string>
+			<key>title</key>
+			<string>KFC</string>
+			<key>subtitle</key>
+			<string>пр. Победителей, 1</string>
+		</dict>
+	</array>
 </dict>
 </plist>
